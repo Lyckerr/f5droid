@@ -10,8 +10,8 @@ import android.widget.EditText;
 
 import java.io.File;
 
-import f5android.plugins.PluginNotificationListener;
-import f5android.plugins.f5.*;
+import info.guardianproject.f5android.plugins.PluginNotificationListener;
+import info.guardianproject.f5android.plugins.f5.*;
 
 public class MainActivity extends AppCompatActivity implements PluginNotificationListener, Embed.EmbedListener {
 
@@ -54,6 +54,5 @@ public class MainActivity extends AppCompatActivity implements PluginNotificatio
 
     @Override
     public void onEmbedded(File outFile) {
-
     }
 }
