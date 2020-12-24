@@ -1,15 +1,22 @@
 <resources>
 
-    <string name="app_name">F5Android</string>
+    <string name="app_name">Android F5 隐写工具</string>
 	<string name="cleaning_up">Cleaning up\u2026</string>
-	<string name="init_permutation">Initing Permutations\u2026</string>
-	<string name="init_huffman_buffer">Initing Huffman Buffer\u2026</string>
-	<string name="init_coeffs">Initing Coefficients\u2026</string>
+	<string name="init_permutation">Initiating Permutations\u2026</string>
+	<string name="init_huffman_buffer">Initiating Huffman Buffer\u2026</string>
+	<string name="init_coeffs">Initiating Coefficients\u2026</string>
 	<string name="querying_image">Querying Image\u2026</string>
 	<string name="setting_huffman_buffer">Setting Huffman Buffer\u2026</string>
 	<string name="reading_huffman_buffer">Reading Huffman Buffer\u2026</string>
 	<string name="downsampling_components">Downsampling Components\u2026</string>
-	<string name="title_activity_launcher_ui">Select Picture</string>
-	<string name="textView">输入信息</string>
-	<string name="button_embed">开始嵌入</string>
+	<string name="title_activity_launcher_ui">选择图片</string>
+	<string name="textview_input_message">输入信息</string>
+	<string name="textview_input_password">输入加密短语</string>
+	<string name="button_select">选择图片</string>
+	<string name="button_reselect">重新选择图片</string>
+	<string name="button_single">单张图片嵌入</string>
+	<string name="button_multi">多张图片嵌入</string>
+	<string name="button_checkEmbeddedPic">查看已嵌入图片</string>
+	<string name="title_single">选择要嵌入信息的图片</string>
+	<string name="edit_embed_message">请输入嵌入信息…</string>
 </resources>
