@@ -33,9 +33,12 @@ public class SingleEmbedActivity extends AppCompatActivity implements
     private int FLAG_IS_PASSWORD_SET = 0;
 
     private String mSelectedImagePath;
-    private String mPassword;
-    private String mMessage;
+
+    private EditText mEditPassword;
     private EditText mEditMessage;
+    private String mMessage;
+    private String mPassword;
+    private File mOutFile;
     private Embed embed;
     private Button mButtonSelect;
     private ImageView mImageViewSelectPicture;
@@ -54,19 +57,16 @@ public class SingleEmbedActivity extends AppCompatActivity implements
         }
 
         setContentView(R.layout.activity_single_embed);
-
-//        mSelectedImagePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/1.jpg";
-        mPassword = "123123123";
-
-
+        mEditPassword = findViewById(R.id.edittext_password);
         mEditMessage = findViewById(R.id.edittext_message);
+
         mButtonSelect = findViewById(R.id.button_select);
         mButtonSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PictureSelector
                         .create(SingleEmbedActivity.this, PictureSelector.SELECT_REQUEST_CODE)
-                        .selectPicture(false);
+                        .selectPicture(true, 512, 512, 1, 1);
             }
         });
         mImageViewSelectPicture = findViewById(R.id.imageview_select);
@@ -86,25 +86,28 @@ public class SingleEmbedActivity extends AppCompatActivity implements
                 this.finish();
                 return true;
             case R.id.button_single_confirm:
+
+
                 if ( FLAG_IS_PHOTO_SET != 1 )
                 {
                     Toast.makeText(this, "请选择载体图片！", Toast.LENGTH_SHORT).show();
                     break;
                 }
-                if ( mEditMessage.getText().toString().isEmpty() )
+                if ( mEditMessage.getText().toString().trim().isEmpty() )
                 {
                     Toast.makeText(this, "请输入嵌入信息！", Toast.LENGTH_SHORT).show();
                     break;
                 }
-                if ( FLAG_IS_PASSWORD_SET != 1 )
+                if ( mEditPassword.getText().toString().trim().isEmpty() )
                 {
                     Toast.makeText(this, "请设置加密短语！", Toast.LENGTH_SHORT).show();
                     break;
                 }
-
+                mMessage = mEditMessage.getText().toString().trim();
+                mPassword = mEditPassword.getText().toString().trim();
                 embed = new Embed(SingleEmbedActivity.this,
                         mSelectedImagePath,
-                        mEditMessage.getText().toString().trim(),
+                        mMessage,
                         mPassword.getBytes());
                 embed.start();
 
@@ -152,11 +155,19 @@ public class SingleEmbedActivity extends AppCompatActivity implements
 
     @Override
     public void onEmbedded(File outFile) {
+        mOutFile = outFile;
+        Log.d(TAG, "onEmbedded: 图片已保存。");
+        Log.d(TAG, "onEmbedded: 存储位置为：" + mOutFile.getAbsolutePath());
+
+        runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(SingleEmbedActivity.this, "载密图片已生成！\n保存在 " + mOutFile.getAbsolutePath(), Toast.LENGTH_LONG).
+                        show();
+
+            }
+        });
     }
 
-    @Override
-    public void onPause() {
 
-        super.onPause();
-    }
+
 }

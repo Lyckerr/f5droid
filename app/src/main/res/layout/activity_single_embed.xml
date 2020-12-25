@@ -35,4 +35,16 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:layout_marginBottom="40dp"
+        android:inputType="textVisiblePassword"
+        android:hint="@string/edit_embed_message"
+        app:layout_constraintBottom_toTopOf="@+id/button_select"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </LinearLayout>
