@@ -21,7 +21,6 @@
             android:name=".SingleEmbedActivity"
             android:label="选择单张图片进行嵌入"
             android:launchMode="singleTop" />
-        <activity android:name=".PictureSelectActivity" />
         <activity
             android:name=".LauncherUI"
             android:launchMode="singleTask">
@@ -31,7 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CheckEmbeddedActivity"></activity>
+        <activity android:name=".CheckEmbeddedActivity">
+
+        </activity>
         <activity android:name=".ActivityTransitionToActivity" />
     </application>
 

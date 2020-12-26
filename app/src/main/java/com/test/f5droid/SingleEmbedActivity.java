@@ -86,8 +86,6 @@ public class SingleEmbedActivity extends AppCompatActivity implements
                 this.finish();
                 return true;
             case R.id.button_single_confirm:
-
-
                 if ( FLAG_IS_PHOTO_SET != 1 )
                 {
                     Toast.makeText(this, "请选择载体图片！", Toast.LENGTH_SHORT).show();
@@ -110,6 +108,8 @@ public class SingleEmbedActivity extends AppCompatActivity implements
                         mMessage,
                         mPassword.getBytes());
                 embed.start();
+
+
 
         }
         return super.onOptionsItemSelected(item);
@@ -150,7 +150,9 @@ public class SingleEmbedActivity extends AppCompatActivity implements
             Log.d("SingleEmbedActivity", "onUpdate: Nothing to show");
     }
     @Override
-    public void onFailure() {}
+    public void onFailure() {
+
+    }
 
 
     @Override
