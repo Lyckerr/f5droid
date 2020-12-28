@@ -15,9 +15,13 @@
 	<string name="button_select">选择图片</string>
 	<string name="button_reselect">重新选择图片</string>
 	<string name="button_single">单张图片嵌入</string>
+	<string name="button_single_extract">单张图片提取</string>
 	<string name="button_multi">多张图片嵌入</string>
 	<string name="button_checkEmbeddedPic">管理载密图片</string>
 	<string name="title_single">选择要嵌入信息的图片</string>
+	<string name="title_single_extract">选择要提取信息的图片</string>
+
 	<string name="title_embedded">管理载密图片</string>
 	<string name="edit_embed_message">请输入嵌入信息…</string>
+	<string name="edit_embed_password">请输入秘密短语…</string>
 </resources>

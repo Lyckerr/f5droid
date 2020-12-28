@@ -19,7 +19,6 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".SingleEmbedActivity"
-            android:label="选择单张图片进行嵌入"
             android:launchMode="singleTop" />
         <activity
             android:name=".LauncherUI"
@@ -34,6 +33,9 @@
 
         </activity>
         <activity android:name=".ActivityTransitionToActivity" />
+        <activity android:name=".SingleExtractActivity"
+            android:launchMode="singleTop"
+            />
     </application>
 
 </manifest>

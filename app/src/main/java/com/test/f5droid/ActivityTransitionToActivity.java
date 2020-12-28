@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.github.chrisbanes.photoview.PhotoView;
 
@@ -23,11 +22,17 @@ public class ActivityTransitionToActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transition_to);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+
         Uri imageUri = getIntent().getData();
 
         imageView = findViewById(R.id.iv_photo);
         imageView.setImageURI(imageUri);
+
+        String picPath = imageUri.getPath();
+        String[] temp = picPath.split("\\/");
+        String title = temp[temp.length-2].concat("/").concat(temp[temp.length-1]);
+        actionBar.setTitle(title);
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

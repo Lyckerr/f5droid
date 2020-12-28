@@ -5,48 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SingleEmbedActivity">
+    tools:context=".SingleExtractActivity">
 
     <ImageView
         android:layout_marginTop="@dimen/sp_20"
-        android:id="@+id/imageview_select"
+        android:id="@+id/imageview_extract_select"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_299" />
 
 
     <Button
-        android:id="@+id/button_select"
+        android:id="@+id/button_extract_select"
         android:layout_width="@dimen/dp_150"
         android:layout_height="70dp"
         android:layout_gravity="center"
         android:text="@string/button_select"
         android:textSize="@dimen/sp_20"
+        android:textColor="@color/color_333333"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/edittext_message"
+        android:id="@+id/edittext_extract_password"
         android:layout_width="match_parent"
         android:layout_height="100sp"
-        android:layout_marginBottom="40dp"
         android:inputType="text"
-        android:focusedByDefault="false"
-        android:hint="@string/edit_embed_message"
-        app:layout_constraintBottom_toTopOf="@+id/button_select"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/edittext_password"
-        android:layout_width="match_parent"
-        android:layout_height="100sp"
-        android:layout_marginBottom="40dp"
-        android:inputType="textVisiblePassword"
         android:hint="@string/edit_embed_password"
         app:layout_constraintBottom_toTopOf="@+id/button_select"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提取的秘密信息："
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_20"
+        />
+    <TextView
+        android:id="@+id/textview_extract_message"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:layout_marginTop="@dimen/sp_20"
+        android:textSize="20sp"
+        android:textColor="@color/color_333333"
+        android:background="@drawable/tv_background"
+        />
 
 </LinearLayout>

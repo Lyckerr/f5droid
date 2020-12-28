@@ -22,6 +22,7 @@ public class LauncherUI extends AppCompatActivity implements View.OnClickListene
     private final String[] permissions = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA,
             Manifest.permission.INTERNET,
             Manifest.permission.ACCESS_NETWORK_STATE
     };
@@ -34,9 +35,11 @@ public class LauncherUI extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_launcher_ui);
 
         Button button_single = findViewById(R.id.button_singlePic);
+        Button button_extract = findViewById(R.id.button_extractPic);
         Button button_check = findViewById(R.id.button_checkEmbeddedPic);
         button_single.setOnClickListener(this);
         button_check.setOnClickListener(this);
+        button_extract.setOnClickListener(this);
 
 //        if(this.checkSelfPermission(permissions) != PackageManager.PERMISSION_GRANTED)
 
@@ -60,6 +63,12 @@ public class LauncherUI extends AppCompatActivity implements View.OnClickListene
                 intentSingle.setClass(LauncherUI.this, SingleEmbedActivity.class);
                 intentSingle.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intentSingle);
+                break;
+            case R.id.button_extractPic:
+                Intent intentExtract = new Intent();
+                intentExtract.setClass(LauncherUI.this, SingleExtractActivity.class);
+                intentExtract.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intentExtract);
                 break;
             case R.id.button_checkEmbeddedPic:
                 Intent intentCheck = new Intent();

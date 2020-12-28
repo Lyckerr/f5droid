@@ -29,10 +29,10 @@
         <Button
             android:textSize="@dimen/sp_20"
             android:layout_gravity="center_vertical"
-            android:id="@+id/button_multiPic"
+            android:id="@+id/button_extractPic"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_100"
-            android:text="@string/button_multi" />
+            android:text="@string/button_single_extract" />
     </LinearLayout>
 
     <LinearLayout
